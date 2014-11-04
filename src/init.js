@@ -1,7 +1,7 @@
 $(document).ready(function(){
   window.dancers = [];
 
-  $(".addDancerButton").on("click", function(event){
+  $(".addDancerButton").on("click", this, function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -9,6 +9,11 @@ $(document).ready(function(){
      * maker functions available in the global scope, clicking that node
      * will call the function to make the dancer.
      */
+
+    window.dancers.push(this);
+
+    //this.step();
+    //this.setPosition(top,left);
 
     /* dancerMakerFunctionName is a string which must match
      * one of the dancer maker functions available in global scope.
