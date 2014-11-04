@@ -32,7 +32,7 @@ var makeDancer = function(top, left, timeBetweenSteps){
     // where it belongs on the page. See http://api.jquery.com/css/
     var latitude = $("body").width() * Math.random();
     this.setPosition (this.linePosition, latitude);
-   
+
   };
 
 
