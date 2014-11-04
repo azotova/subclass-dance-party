@@ -1,15 +1,12 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps){
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var BlinkyDancer = function(top, left, timeBetweenSteps){
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.addClass("blinky");
+};
+  
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-};
-  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
-  // so we must keep a copy of the old version of this function
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
-makeBlinkyDancer.prototype.oldStep = function () {
-  return makeDancer.prototype.step.call(this);
-};
-makeBlinkyDancer.prototype.step = function () {
-  this.oldStep();
+BlinkyDancer.prototype.step = function () {
+  Dancer.protoyupe.step.call(this);
   this.$node.toggle();
 };

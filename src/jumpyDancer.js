@@ -1,19 +1,18 @@
-var makeJumpingDancer = function(top, left, timeBetweenSteps){
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var JumpingDancer = function(top, left, timeBetweenSteps){
+  Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass("jumpy");
   this.linePosition = "400px";
 
 };
 
-makeJumpingDancer.prototype = Object.create(makeDancer.prototype);
-makeJumpingDancer.prototype.constructor = makeJumpingDancer;
-makeJumpingDancer.prototype.oldStep = function () {
-  return makeDancer.prototype.step.call(this);
+JumpingDancer.prototype = Object.create(Dancer.prototype);
+JumpingDancer.prototype.constructor = JumpingDancer;
+JumpingDancer.prototype.oldStep = function () {
+  return Dancer.prototype.step.call(this);
 };
-makeJumpingDancer.prototype.step = function () {
+JumpingDancer.prototype.step = function () {
 
   this.oldStep();
   this.$node.toggleClass('jump');
 
 };
-

@@ -6,7 +6,7 @@ describe("jumpyDancer", function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    jumpyDancer = new makeJumpingDancer(10, 20, timeBetweenSteps);
+    jumpyDancer = new JumpingDancer(10, 20, timeBetweenSteps);
   });
 
   it("should have a jQuery $node object", function(){
@@ -25,7 +25,7 @@ describe("jumpyDancer", function() {
 
       expect(jumpyDancer.step.callCount).to.be.equal(0);
 
-      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      clock.tick(timeBetweenSteps); 
       clock.tick(timeBetweenSteps);
 
       expect(jumpyDancer.step.callCount).to.be.equal(1);
