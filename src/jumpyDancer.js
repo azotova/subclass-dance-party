@@ -1,7 +1,7 @@
 var makeJumpingDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass("jumpy");
-  this.linePosition = "50%";
+  this.linePosition = "400px";
 
 };
 

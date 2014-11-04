@@ -1,7 +1,7 @@
 var makeAnimatedDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass("animate");
-  this.linePosition = "80%";
+  this.linePosition = "800px";
   this.mouse();
 };
 
@@ -29,6 +29,6 @@ makeAnimatedDancer.prototype.mouse = function () {
   var self=this;
   this.$node.on('mouseover',(function (){
     console.log("hi")
-    self.setPosition("5%","5%");
+    self.setPosition("500px","500px");
   })
 )};
