@@ -28,7 +28,7 @@ makeAnimatedDancer.prototype.step = function () {
 makeAnimatedDancer.prototype.mouse = function () {
   var self=this;
   this.$node.on('mouseover',(function (){
-    console.log("hi")
+    //console.log("hi")
     self.setPosition("500px","500px");
   })
 )};
